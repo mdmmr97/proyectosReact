@@ -1,33 +1,44 @@
 import React, { useState } from "react";
 
-const Contador = (props) => {
+const Contador = () => {
 
-    const [contador, setContador] = useState(+props.contador);
-    const [clicks, setClicks] = useState([]);
+    const [clicks, setClicks] = useState({rojo : 0, 
+                                          amarillo : 0,
+                                          verde: 0,
+                                          total: 0});
 
-    function incrementarContador() {
-        setContador(contador+1)
-        setClicks(clicks.concat("i"));
+    function incrementarRojo() {
+        setClicks({...clicks, 
+                    rojo: clicks.rojo + 1,
+                    total: clicks.total +1});
+                    
+    }
+    function incrementarAmarillo() {
+        setClicks({...clicks, 
+                    amarillo: clicks.amarillo + 1,
+                    total: clicks.total +1});
     }
 
-    function resetearContador() {
-        setContador(+props.contador)
-        setClicks([...clicks, "r"]);
+    function incrementarVerde() {
+        setClicks({...clicks, 
+                    verde: clicks.verde + 1,
+                    total: clicks.total +1});
     }
 
-        const esPar = contador % 2 === 0;
-        const mensaje = esPar ? "Es Par" : "Es Impar";
+    
 
     return (
         <div>
-            <h1>{contador}</h1>
-            <p>{mensaje}</p>
-            <p>{clicks}</p>
-            <p> Nº Clicks: {clicks.length}</p>
-            <p> Clicks "I": {clicks.filter(e => e === "i").length}</p>
-            <p> Clicks "R": {clicks.filter(e => e === "r").length}</p>
-            <button onClick={incrementarContador}> Incrementar Contador</button>
-            <button onClick={resetearContador}> Resetear Contador</button>
+            <button onClick={incrementarRojo}> Rojo </button>
+            <button onClick={incrementarAmarillo}> Amarillo </button>
+            <button onClick={incrementarVerde}> Verde </button>
+            <p>Rojo: {clicks.rojo}</p>
+            <p>Amarillo: {clicks.amarillo}</p>
+            <p>Verde: {clicks.verde}</p>
+            <p>Total: {clicks.total}</p>
+            <p>%Rojo: {(clicks.rojo/clicks.total)*100}</p>
+            <p>%Amarillo: {(clicks.amarillo/clicks.total)*100}</p>
+            <p>%Verde: {(clicks.verde/clicks.total)*100}</p>
         </div>
     )
 }
