@@ -1,12 +1,16 @@
-import {useState} from 'react';
-
-
 const Nota = (props) => {
+
+    // Mediante un operador condicional ponemos el texto (importante). Analizamos
+    // el valor del atributo importante de la nota, si es TRUE ponemos el texto "(importante)"  y si
+    // es false no ponemos nada
+    const importante = (props.nota.importante) ? "(importante)" : "";
+
     return (
-        <div>
-            <h2>{props.nota.titulo}</h2>
-            <p>{props.nota.contenido}</p>
-        </div>
-    );
-};
+        <li>
+            <p>{props.nota.contenido} <span className="importante">{importante}</span></p>
+            <small>{props.nota.fecha}</small>
+        </li>
+    )
+}
+
 export default Nota;
