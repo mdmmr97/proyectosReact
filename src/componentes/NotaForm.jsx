@@ -1,7 +1,8 @@
 import { useState } from 'react'
 
 const NotaForm = (props) => {
-    const NOTASINICIALES = {contenido : "", 
+    const NOTASINICIALES = {id: 0,
+                            contenido : "", 
                             fecha : "",
                             importante : false };
 
@@ -21,10 +22,10 @@ const NotaForm = (props) => {
                 setNuevaNota({...nuevaNota, fecha : event.target.value});
             break;
             case IMPORTANTE:
-                setNuevaNota({...nuevaNota, importante : true});
+                setNuevaNota({...nuevaNota, importante : JSON.parse(event.target.value)});
             break;
             case NOIMPORTANTE:
-                setNuevaNota({...nuevaNota, importante : false});
+                setNuevaNota({...nuevaNota, importante : JSON.parse(event.target.value)});
             break;
             default: break;
         }
@@ -43,13 +44,13 @@ const NotaForm = (props) => {
             <input type="text" id={CONTENIDO} onChange={asignarNota} value={nuevaNota.contenido}/>
             <br/>
             <label>Fecha</label><br/>
-            <input type="date" id={FECHA} onChange={asignarNota} value={nuevaNota.fecha}/>
+            <input type="datetime-local" id={FECHA} onChange={asignarNota} value={nuevaNota.fecha}/>
             <br/>
-            
-            <input type="checkbox" id={IMPORTANTE} onChange={asignarNota} value={nuevaNota.importante}>Importante</input>
-            <input type="checkbox" id={NOIMPORTANTE} onChange={asignarNota} value={nuevaNota.importante}>No Importante</input>
+            <div>
+                <input type="radio" id={IMPORTANTE} value={true} onChange={asignarNota} name="importante" checked={nuevaNota.importante}/>Importante
+                <input type="radio" id={NOIMPORTANTE} value={false} onChange={asignarNota} name="importante" checked={!nuevaNota.importante}/>No Importante
+            </div>
             <br/>
-            
             <button>Añadir Nota</button>
         </form>
     );

@@ -21,10 +21,9 @@ const ListaNotas = () => {
     }
 
     function manejarAccion(nota) {
-        console.log("Añadimos ", nota," a la lista de notas");
+        console.log("Añadimos ", nota," a la lista de notas"); 
         nota.id = listanotas.length + 1;
-        setNotas(listanotas.push(nota));
-        console.log("Ahora la lista de notas es: ", listanotas);
+        setNotas([...listanotas, nota]);
     }
 
     return (
@@ -32,7 +31,7 @@ const ListaNotas = () => {
             <h1>Notas</h1>
             <button onClick={manejarMostrarNotas}>{mostrarTodos ? "Mostrar importantes" : "MostrarTodos"}</button>
             <ul>
-                {notas.filter(filtrarNotas).map(devolverNota)}
+                {listanotas.filter(filtrarNotas).map(devolverNota)}
             </ul>
             <NotaForm manejarAccion={manejarAccion}></NotaForm>
         </div>
