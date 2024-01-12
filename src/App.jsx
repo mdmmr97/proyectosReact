@@ -1,35 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from 'react';
+import './App.css';
+import Post from './componentes/Post';
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  // Estado con la lista de post que recuperamos de la REST API
+  const [listaPost, setListaPost] = useState([]);
+
+  function obtenerPosts(){
+
+
+      // Usamos fetch para recuperar los post de la REST API. Puesto que hacemos
+      // una petición al servidor y esta puede tardar un tiempo en resolverse usaremos
+      // una promesa, la respuesta de la REST API la convertimos a json y luego actualizamos
+      // el estado de nuestro componente
+      fetch("https://jsonplaceholder.typicode.com/posts")
+      .then(response => response.json())
+      .then(json => {
+          
+          //Cargamos los post en el estado del componente
+          setListaPost(json);
+
+        })
+  }
+
+  // Llamamos a la función de extracción de datos con un useEffect
+  // para que solo se ejecute una vez
+  useEffect(obtenerPosts, []);
+
+  // Función encargada de llamar al componente Post con el post
+  // que recibe como parámetro implícito de la función map
+  function muestraPost(post) {  
+
+    return <Post  key={post.id} post={post}></Post>;
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div>
+      <div id="divPost">
+        <h1>Post</h1>
+        <ul>                        
+        {listaPost.map(muestraPost)}
+        </ul>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+    );
 }
-
-export default App
+export default App;
