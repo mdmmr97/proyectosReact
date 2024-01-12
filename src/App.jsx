@@ -1,35 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import './App.css';
+import BarraHeramientas from './componentes/BarraHerramientas';
+import TemaContext from './contextos/TemaContext';
+import IdiomaContext from './contextos/IdiomaContex';
+import temas from './mock-temas';
+import SelectorTema from './componentes/SelectorTema';
+import SelectorIdioma from './componentes/SelectorIdioma';
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const ES="es";
+
+  const [temaElegido, setTemaElegido] = useState(temas.light);
+  const [idiomaElegido, setIdiomaElegido] = useState(ES);
+
+  function manejarSeleccionTema(valor)  {
+    setTemaElegido(valor==="1"?temas.light:temas.dark);
+  }
+
+  function manejarSeleccionIdioma(valor)  {
+    setIdiomaElegido(valor);
+  }  
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <SelectorIdioma idioma={idiomaElegido}  manejarSeleccion={manejarSeleccionIdioma}></SelectorIdioma>
+      <IdiomaContext.Provider value={idiomaElegido}>
+        <SelectorTema tema={1} manejarSeleccion={manejarSeleccionTema} ></SelectorTema>
+        {/*Definimos el proveedor del contexto.*/}
+        <TemaContext.Provider value={temaElegido}>
+          <BarraHeramientas></BarraHeramientas>
+        </TemaContext.Provider>
+      </IdiomaContext.Provider>
+    </div>
+  );
 }
 
-export default App
+export default App;
