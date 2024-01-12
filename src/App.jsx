@@ -1,34 +1,45 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Fruta from './componentes/Fruta'
+import frutas from './mock-frutas'
+import FrutaFormInsert from './componentes/FrutaFormInsert'
+import FrutaFormDelete from './componentes/FrutaFormDelete'
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [listaFrutas, setListaFrutas] = useState(frutas)
+
+  function manejarInsercion(fruta) {
+    console.log("valor componetne hijo ", fruta, " lo añadimos a la lista");
+    setListaFrutas([...listaFrutas, fruta]);
+  } 
+
+  function manejarBorrado(id) {
+    console.log("valor componetne hijo ", id, " lo eliinamos lista");
+    setListaFrutas(listaFrutas.filter(item => item !== listaFrutas[id]));
+  }
+
+  function muestraFruta(fruta,index) {  
+    return <Fruta  key={index} fruta={fruta}></Fruta>;    
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div>
+      <div id="divFrutas">
+        <h1>Frutas</h1>
+        <ol>
+        {listaFrutas.map(muestraFruta)}
+        </ol>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div id="divForm">
+        <FrutaFormInsert manejarInsercion={manejarInsercion} 
+                         elementos={listaFrutas.length}>            
+        </FrutaFormInsert>
+        <FrutaFormDelete manejarBorrado={manejarBorrado} 
+                         elementos={listaFrutas.length}>            
+        </FrutaFormDelete>          
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 
