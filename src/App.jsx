@@ -1,35 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
+import Agenda from './componentes/Agenda'
+import ContactoForm from './componentes/ContactoForm'
+import BusquedaForm from './componentes/BusquedaForm'
+import listinTelefonico from './mock-telefonos';
 
 function App() {
-  const [count, setCount] = useState(0)
+  
+  const [listaContactos, setListaContactos] = useState(listinTelefonico);
+  const [busqueda, setBusqueda] = useState("");
+
+  function manejarNuevoContacto(contacto) {
+    console.log("valor componente hijo ", contacto, " lo añadimos a la lista");
+    contacto.id = listaContactos.length + 1;
+    setListaContactos([...listaContactos, contacto]);
+  }  
+
+  function manejarBusqueda(busqueda) {
+    console.log("valor componetne hijo ", busqueda);
+    setBusqueda(busqueda);
+  }
+
+  function muestraTelefonos(entrada) {  
+    return <Agenda  key={entrada.id} entrada={entrada}></Agenda>; 
+  }
+
+  function filtrar(entrada){
+    if (entrada.nombre.indexOf(busqueda) !== -1) return true;
+    else return false;
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+        <h1>Buscar</h1>
+        <BusquedaForm manejarBusqueda={manejarBusqueda}>
+        </BusquedaForm>
+        <h1>Nuevo contacto</h1>
+        <ContactoForm manejarNuevoContacto={manejarNuevoContacto}>            
+        </ContactoForm>       
+        <h1>Agenda</h1>
+        <ul>
+        {listaContactos
+            .filter(filtrar)
+            .map(muestraTelefonos)}
+        </ul>
+    </div>
+    );
 }
-
-export default App
+export default App;
