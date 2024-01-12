@@ -2,23 +2,25 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Post from './componentes/Post'
 import { getAllPosts } from './servicios/posts/getAllPosts';
+import AjaxLoader from './componentes/AjaxLoader';
 
 function App() {
 
   // Estado con la lista de post que recuperamos de la REST API
   const [listaPost, setListaPost] = useState([]);
-
+  const [cargando, setCargando] = useState(false);
 
   function obtenerPosts(){
+    // Indicamos que estamos cargando los posts
+    setCargando(true);
+    // Usamos el servicio de obtención de posts que hemos creado
+    getAllPosts().then(posts => {
 
-      // Usamos el servicio de obtención de posts que hemos creado
-      getAllPosts().then(posts => {
-
-          //Cargamos los post en el estado del componente
-          setListaPost(posts);
-
-
-        });                    
+      //Cargamos los post en el estado del componente
+      setListaPost(posts);
+      // Indicamos que hemos terminado de cargar los posts
+      setCargando(false);
+    });                    
   }
 
   // Llamamos a la función de extracción de datos con un useEffect
@@ -35,9 +37,11 @@ function App() {
     <div>
       <div id="divPost">
         <h1>Post</h1>
-        <ul>                        
-        {listaPost.map(muestraPost)}
-        </ul>
+        {cargando ? <AjaxLoader></AjaxLoader> 
+                  : <ul>                        
+                      {listaPost.map(muestraPost)}
+                    </ul>
+        }
       </div>
     </div>
     );
