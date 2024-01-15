@@ -1,33 +1,38 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+/*import './App.css'*/
+import 'bootstrap/dist/css/bootstrap.min.css'; // Importa Bootstrap
+import 'jquery/dist/jquery.min.js';
+import 'popper.js/dist/popper.min.js';
+import 'bootstrap/dist/js/bootstrap.min.js';
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const titulo = "Free Games";
 
   return (
     <>
+      <h1 className='col 12'>{titulo}</h1>
+      <div className='row'>
+        <div className='col-2 he'>
+          <div className='row'>
+            <div className='col-12'>
+              <button className='btn btn-primary'>Nuevo Juego</button>
+            </div>
+            <div className='col-12'>
+              <button className='btn btn-primary'>Nuevo Juego</button>
+            </div>
+            <div className='col-12'>
+              <button className='btn btn-primary'>Nuevo Juego</button>
+            </div>
+          </div>
+        </div>
+        <div className='col-10'>
+
+        </div>
+      </div>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
