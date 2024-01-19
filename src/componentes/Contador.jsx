@@ -1,27 +1,17 @@
 import React, { useState } from 'react'
+import useCounter from '../hooks/useCounter';
 
 const Contador = (props) => {
 
-    const [valorContador, setContador] = useState(+props.contador);
+    const contador = useCounter(props.contador);
 
-    // Función encargada de incrementar el contador haciendo
-    // uso del hook
-    function incrementarContador() {
-      setContador(valorContador + 1);
-    }
-    function decrementarContador() {
-        setContador(valorContador - 1);
-    }
-    function resetearContador() {
-        setContador(+props.contador);
-    }
     return (
       <div>
         <p>El valor del contador es</p>
-        <h1>{valorContador}</h1>
-        <button onClick={incrementarContador}> Incrementa contador </button>
-        <button onClick={decrementarContador}> Decrementa contador </button>
-        <button onClick={resetearContador}> Resetear contador </button>
+        <h1>{contador.valorContador}</h1>
+        <button onClick={contador.incrementarContador}> Incrementa contador </button>
+        <button onClick={contador.decrementarContador}> Decrementa contador </button>
+        <button onClick={contador.resetearContador}> Resetear contador </button>
       </div>
     )
 }
