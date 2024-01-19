@@ -1,12 +1,13 @@
 import './App.css';
-import MouseApp from './componentes/MouseApp';
-function App() {
+import Contador from './componentes/Contador';
 
+function App() {
 
   return (
     <div>
-      <MouseApp></MouseApp>
+      <Contador contador="0"></Contador>
     </div>
-    );
+  );
 }
+
 export default App;
