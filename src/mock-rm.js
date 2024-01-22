@@ -22,7 +22,9 @@ const rm = {
       superficie: 858.8,
       elevacion: 625,
       bandera:"https://www.comprarbanderas.es/images/banderas/400/21563-caravaca-de-la-cruz-bandera_400px.jpg",
-    },
+    }
 
   };
   export default rm;
+
+  
