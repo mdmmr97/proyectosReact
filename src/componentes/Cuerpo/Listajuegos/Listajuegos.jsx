@@ -1,25 +1,17 @@
-import { json } from "stream/consumers";
-import { getAllJuegos } from "../Juego/getAllJuegos";
+import { getAllPosts } from "../../../servicios/posts/getAllPosts";
 import Juego from "../Juego/Juego";
 import { useEffect } from "react";
 
 const ListaJuegos = () => {
-    const [listajuegos, setListajuegos] = useState([]);
 
-    function obtenerJuegos(){
-        getAllJuegos().then(juegos =>{
-            setListajuegos(juegos);
-        });
-    }
-
-    useEffect(obtenerJuegos,[]);
-
-    function mostrarJuegos(juego){
-        return <Juego key={juego.id} post={juego}></Juego>
+    function mostrarPosts(Posts){
+        return <Juego></Juego>;
     };
     return (
         <ul>
-            {listajuegos.map(mostrarJuegos)}
+            <li>
+                <Juego titulo='Juego 1'></Juego>
+            </li>
         </ul>
     );
 };

@@ -2,7 +2,7 @@ import React from 'react'
 import Ordenar from './Ordenar/Ordenar'
 import Filtrar from './Filtrar/Filtrar'
 
-const Lateral = () => {
+const Filtros = () => {
     return (
         <>
          <div className='col-12'>
@@ -14,4 +14,4 @@ const Lateral = () => {
         </>
     )
 }
-export default Lateral
+export default Filtros

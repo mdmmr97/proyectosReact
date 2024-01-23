@@ -1,4 +1,4 @@
-export function getAllJuegos () {
+export function getAllPosts () {
 
     return fetch("https://www.freetogame.com/api/games")
            .then(response => {

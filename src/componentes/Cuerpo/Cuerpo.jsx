@@ -1,11 +1,15 @@
 import ListaJuegos from "./Listajuegos/Listajuegos"
+import ScrollUp from "./ScrollUp/ScrollUp"
 
-const Cuerpo = () => {
+const Cuerpo = (props) => {
+
     return (
-        <div className='col-12'>
-            <ListaJuegos></ListaJuegos>
-            <button className='btn btn-primary'>Nuevo Juego</button>
+        <div id='inicio' className='col-12'>
+            
+            <ScrollUp></ScrollUp>
         </div>
     )
 }
 export default Cuerpo
+
+/*<ListaJuegos lista={props.juegos}></ListaJuegos> */

@@ -1,4 +1,4 @@
-import Select from './Select'
+import Select from '../Select/Select'
 import genero from '../../../mocks/mock-genero';
 import plataforma from '../../../mocks/mock-genero';
 
