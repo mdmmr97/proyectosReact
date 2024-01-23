@@ -27,12 +27,27 @@ function App() {
     });                    
   }
   
-  useEffect(obtenerPosts, []);
+  //useEffect(obtenerPosts, []);
 
   return (
     <>
       <h1>{titulo}</h1>
-      {buscando ? 
+      <div className='row'>
+          <div className='col-3'>
+            <Filtros></Filtros>
+          </div>
+          <div className='col-9'>
+            <Cuerpo juegos={listaPost}></Cuerpo>
+          </div>
+        </div>
+    </>
+  )
+}
+
+export default App
+
+/*
+{buscando ? 
         <AjaxLoader></AjaxLoader> 
       :
         <div className='row'>
@@ -44,8 +59,4 @@ function App() {
           </div>
         </div>
       }
-    </>
-  )
-}
-
-export default App
+*/

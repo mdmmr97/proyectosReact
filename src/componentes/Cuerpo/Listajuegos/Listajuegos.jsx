@@ -8,8 +8,8 @@ const ListaJuegos = () => {
         return <Juego></Juego>;
     };
     return (
-        <ul>
-            <li>
+        <ul className="row">
+            <li className="col-4">
                 <Juego titulo='Juego 1'></Juego>
             </li>
         </ul>
