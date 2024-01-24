@@ -1,18 +1,17 @@
-import { getAllPosts } from "../../../servicios/posts/getAllPosts";
 import Juego from "../Juego/Juego";
-import { useEffect } from "react";
+const ListaJuegos = (props) => {
 
-const ListaJuegos = () => {
-
-    function mostrarPosts(Posts){
-        return <Juego></Juego>;
+    function mostrarJuegos(juego){
+        console.log(juego.id);
+        //return <Juego key={juego.id} juego={juego}></Juego>;
     };
+
     return (
-        <ul className="row">
-            <li className="col-4">
-                <Juego titulo='Juego 1'></Juego>
-            </li>
-        </ul>
+        <div className="row">
+            <p>{mostrarJuegos(props.juegos)}</p>
+        </div>
     );
 };
 export default ListaJuegos;
+
+/*{props.juegos.map(mostrarJuegos)} */

@@ -20,26 +20,30 @@ function App() {
 
     setBuscando(true);
     getAllPosts().then(posts => {
-
+      
       setListaPost(posts);
       setBuscando(false);
 
     });                    
   }
   
-  //useEffect(obtenerPosts, []);
+  useEffect(obtenerPosts, []);
 
   return (
     <>
       <h1>{titulo}</h1>
-      <div className='row'>
+      {buscando ? 
+        <AjaxLoader></AjaxLoader> 
+      :
+        <div className='row'>
           <div className='col-3'>
-            <Filtros></Filtros>
+
           </div>
           <div className='col-9'>
             <Cuerpo juegos={listaPost}></Cuerpo>
           </div>
         </div>
+      }
     </>
   )
 }
@@ -55,6 +59,7 @@ export default App
             <Filtros></Filtros>
           </div>
           <div className='col-9'>
+            {listaPost.map(mostrarJuegos)}
             <Cuerpo juegos={listaPost}></Cuerpo>
           </div>
         </div>

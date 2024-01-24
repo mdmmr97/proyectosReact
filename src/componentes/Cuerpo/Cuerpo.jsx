@@ -5,11 +5,9 @@ const Cuerpo = (props) => {
 
     return (
         <div id='inicio' className='col-12'>
-            
+            <ListaJuegos juegos={props.juegos}></ListaJuegos>
             <ScrollUp></ScrollUp>
         </div>
     )
 }
 export default Cuerpo
-
-/*<ListaJuegos lista={props.juegos}></ListaJuegos> */
