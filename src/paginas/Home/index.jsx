@@ -6,6 +6,7 @@ import useGifs from '../../hooks/useGifs';
 import AjaxLoader from '../../componentes/AjaxLoader';
 import ListaGifs from '../../componentes/ListaGifs';
 import TrendingSearches from '../../componentes/TrendingSearches';
+import LazyLoad from 'react-lazy-load';
 
 const Home = () => {
 
@@ -27,13 +28,15 @@ const Home = () => {
             <div className="Home">
                 <BuscaGifsForm manejarAccion={manejarAccion}></BuscaGifsForm>
             </div>
-            <div className="Home">
+            <div className="Home altuarListaGifts">
                 <p>Última búsqueda</p>
                 {buscando 
                     ? <AjaxLoader loader={imagenLoader}></AjaxLoader> 
                     : <ListaGifs listaGifs={listaGifs}></ListaGifs>}
-            </div>           
-            <TrendingSearches></TrendingSearches>
+            </div>   
+            <LazyLoad offset={100}>
+                <TrendingSearches></TrendingSearches>
+            </LazyLoad>        
         </div>
     
     )

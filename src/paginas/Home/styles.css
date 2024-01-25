@@ -3,4 +3,9 @@
        text-align: left;
        font-weight: bold;
        font-size: 20px;
-       margin-bottom: 1px;}
+       margin-bottom: 1px;
+}
+
+.altuarListaGifts{
+       min-height: 100vh;
+}
