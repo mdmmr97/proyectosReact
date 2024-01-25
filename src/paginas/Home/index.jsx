@@ -5,7 +5,11 @@ import imagenLoader from '../../img/ajax-loader.gif';
 import useGifs from '../../hooks/useGifs';
 import AjaxLoader from '../../componentes/AjaxLoader';
 import ListaGifs from '../../componentes/ListaGifs';
-import TrendingSearches from '../../componentes/TrendingSearches';
+
+//import TrendingSearches from '../../componentes/TrendingSearches';
+import React, {Suspense} from 'react';
+const TrendingSearches = React.lazy(() => import('../../componentes/TrendingSearches'));
+
 import LazyLoad from 'react-lazy-load';
 
 const Home = () => {
@@ -33,10 +37,12 @@ const Home = () => {
                 {buscando 
                     ? <AjaxLoader loader={imagenLoader}></AjaxLoader> 
                     : <ListaGifs listaGifs={listaGifs}></ListaGifs>}
-            </div>   
-            <LazyLoad offset={100}>
-                <TrendingSearches></TrendingSearches>
-            </LazyLoad>        
+            </div>
+            <Suspense fallback="Cargando componente">
+                <LazyLoad offset={100}>
+                    <TrendingSearches></TrendingSearches>
+                </LazyLoad>
+            </Suspense>    
         </div>
     
     )
