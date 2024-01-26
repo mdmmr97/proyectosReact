@@ -5,6 +5,8 @@ import imagenLoader from '../../img/ajax-loader.gif';
 import AjaxLoader  from "../../componentes/AjaxLoader";
 import useGifs from "../../hooks/useGifs";
 
+import InfiniteScroll from "react-infinite-scroll-component";
+
 const ResultadosBusqueda = (props) => {
 
     const {buscando, listaGifs, setPage} = useGifs(props.params);
@@ -16,12 +18,14 @@ const ResultadosBusqueda = (props) => {
     //console.log(props);
     return (
         <div className="Home">
-            {buscando 
-                ? <AjaxLoader loader={imagenLoader}></AjaxLoader> 
-                : <ListaGifs listaGifs={listaGifs}></ListaGifs>}
-            <div>
-                <button className="r-boton" onClick={obtenerSiguientePagina}>Mas resultados</button>
-            </div>
+            <InfiniteScroll
+                dataLength={listaGifs.length}
+                next={obtenerSiguientePagina}
+                hasMore={true}
+                loader={<AjaxLoader loader={imagenLoader}></AjaxLoader>}
+            >
+                <ListaGifs listaGifs={listaGifs}></ListaGifs>
+            </InfiniteScroll>
         </div>
     )
 }
