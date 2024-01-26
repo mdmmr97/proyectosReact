@@ -10,4 +10,4 @@ const Cuerpo = () => {
         </div>
     )
 }
-export default Cuerpo
+export default Cuerpo;

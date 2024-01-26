@@ -15,7 +15,7 @@ const Juego = (props) => {
     return (
         <div className="col-3">
             <div className="card" style={{width: 300}}>
-                
+            <img src={props.juego.thumbnail} className="card-img-top" alt="Portada del Juego"/>
                 <div className="card-body">
                     <h2 className="card-title">{props.juego.title}</h2>
                     <p className="card-text"><span>Plataforma: </span>{props.juego.platform}</p>
@@ -28,6 +28,3 @@ const Juego = (props) => {
     )
 };
 export default Juego;
-/*
- <img src={props.juego.thumbnail} className="card-img-top" alt="Portada del Juego"/>
-*/
