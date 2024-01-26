@@ -6,7 +6,8 @@ const Filtros = () => {
     return (
         <>
          <div className='col-12'>
-            <Ordenar titulo="Ordenacion"></Ordenar>
+            <h2>Ordenacion</h2>
+            <Ordenar titulo="Título"></Ordenar>
           </div>
           <div className='col-12'>
             <Filtrar titulo="Filtros"></Filtrar>
