@@ -25,7 +25,7 @@ const useGifs = ({keyword} = {keyword:null}) =>  {
         setBuscando(true);
 
         // Usamos el servicio de obtención de posts que hemos creado
-        getGifs({keyword:keywordAUsar, page:page}).then(nextGifs => {
+        getGifs({keyword:keywordAUsar, page : page}).then(nextGifs => {
 
             //Cargamos los post en el estado del componente
             setListaGifs(prevGifs => prevGifs.concat(nextGifs));
@@ -33,12 +33,14 @@ const useGifs = ({keyword} = {keyword:null}) =>  {
 
             //Indicamos que hemos terminado de cargar los datos
             setBuscando(false);
+
+            localStorage.setItem("lastKeyword", keywordAUsar);
         });                    
     }
 
     // Llamamos a la función de extracción de datos con un useEffect
     // para que solo se ejecute una vez
-    useEffect(obtenerGifs, [page, keywordAUsar, setListaGifs]);
+    useEffect(obtenerGifs, [keyword, page, setListaGifs]);
 
     return {buscando, listaGifs, setPage}
 }

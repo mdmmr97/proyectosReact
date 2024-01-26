@@ -20,7 +20,7 @@ const ResultadosBusqueda = (props) => {
                 ? <AjaxLoader loader={imagenLoader}></AjaxLoader> 
                 : <ListaGifs listaGifs={listaGifs}></ListaGifs>}
             <div>
-                <button className="r-boton" onClick={obtenerSiguientePagina}>MAs resultados</button>
+                <button className="r-boton" onClick={obtenerSiguientePagina}>Mas resultados</button>
             </div>
         </div>
     )
