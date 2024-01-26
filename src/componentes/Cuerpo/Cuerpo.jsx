@@ -1,11 +1,11 @@
-import ListaJuegos from "./Listajuegos/Listajuegos"
-import ScrollUp from "./ScrollUp/ScrollUp"
+import ListaJuegos from "../Listajuegos/Listajuegos"
+import ScrollUp from "../ScrollUp/ScrollUp"
 
-const Cuerpo = (props) => {
+const Cuerpo = () => {
 
     return (
         <div id='inicio' className='col-12'>
-            <ListaJuegos juegos={props.juegos}></ListaJuegos>
+            <ListaJuegos></ListaJuegos>
             <ScrollUp></ScrollUp>
         </div>
     )

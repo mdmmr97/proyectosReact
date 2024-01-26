@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import Select from '../Select/Select'
-import genero from '../../../mocks/mock-genero';
-import plataforma from '../../../mocks/mock-genero';
+import Select from '../Select/Select';
+import genero from '../../mocks/mock-genero';
+import plataforma from '../../mocks/mock-plataforma';
 
 const Filtrar = (props) => {
     

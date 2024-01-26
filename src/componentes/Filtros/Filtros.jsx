@@ -1,6 +1,6 @@
 import React from 'react'
-import Ordenar from './Ordenar/Ordenar'
-import Filtrar from './Filtrar/Filtrar'
+import Ordenar from '../Ordenar/Ordenar'
+import Filtrar from '../Filtrar/Filtrar'
 
 const Filtros = () => {
     return (
