@@ -1,19 +1,18 @@
-import React, { useState, useContext } from 'react';
-import OrdenContext from '../../contexto/OrdenContext';
+import React, { useState } from 'react';
+import {OrdenProvider, useOrdenContext} from '../../contexto/OrdenContext';
 
 const Ordenar = (props) => {
-    const VALOR_INICIAL = 'A .. Z';
     const [orden, setOrden] = useState('');
 
-    let ordenContext = useContext(OrdenContext);
+    const {ordencontext, setContexto} = useOrdenContext(OrdenProvider);
 
-    function guardarOrden(e){
-        e.preventDefault();
+    function guardarOrden(e) {
+
         setOrden(e.target.value);
         console.log(e.target.value);
 
-        ordenContext = e.target.value;
-        console.log(ordenContext);
+        setContexto(e.target.value);
+        console.log(ordencontext);
     }
 
     return (
@@ -21,7 +20,7 @@ const Ordenar = (props) => {
         <div>
             <h3>{props.titulo}</h3>
             <select id="select" name="select" value={orden} onChange={guardarOrden}>
-                <option value={'Z .. A'} >{'Z .. A'}</option>
+                <option value={'Z .. A'}>{'Z .. A'}</option>
                 <option value={'A .. Z'}>{'A .. Z'}</option>
             </select>
         </div>

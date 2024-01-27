@@ -1,6 +1,7 @@
-import React, {useState, useContext} from 'react';
-import GeneroContext from '../../contexto/GeneroContext';
-import PlataformaContext from '../../contexto/PlataformaContext';
+import React, {useState} from 'react';
+import {GeneroProvider, useGeneroContext} from '../../contexto/GeneroContext';
+import {PlataformaProvider, usePlataformaContext} from '../../contexto/PlataformaContext';
+
 
 import Select from '../Select/Select';
 import genero from '../../mocks/mock-genero';
@@ -11,18 +12,18 @@ const Filtrar = (props) => {
     const [generos, setGeneros] = useState(genero);
     const [plataformas, setPlataformas] = useState(plataforma);
 
-    const [generoContext, setGeneroContext] = useContext(GeneroContext);
-    const [plataformaContext, setPlataformaContext] = useContext(PlataformaContext);
+    const {generocontext, setGeneroContext} = useGeneroContext(GeneroProvider);
+    const {plataformacontext, setPlataformaContext} = usePlataformaContext(PlataformaProvider);
 
     function manejarDatos(tipo, dato){
         switch (tipo) {
             case 'Género':
                 setGeneroContext(dato);
-                console.log(generoContext);
+                console.log(generocontext);
                 break;
             case 'Plataforma':
                 setPlataformaContext(dato);
-                console.log(plataformaContext);
+                console.log(plataformacontext);
                 break;
         }
         console.log(dato);

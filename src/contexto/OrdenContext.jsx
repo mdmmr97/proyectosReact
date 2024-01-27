@@ -1,5 +1,18 @@
-import React, { Children } from "react";
+import React, { useContext, useState } from "react";
 
-const OrdenContext = React.createContext();
+export const OrdenContext = React.createContext();
 
+const VALOR_INICIAL = "";
+
+export const OrdenProvider = ({ children }) => {
+    const [ordencontext, setContexto] = useState(VALOR_INICIAL);
+
+    return (
+        <OrdenContext.Provider value={{ ordencontext, setContexto }}>
+            {children}
+        </OrdenContext.Provider>
+    );
+};
+
+export const useOrdenContext = () => useContext(OrdenContext);
 export default OrdenContext;

@@ -5,8 +5,14 @@ const Cuerpo = () => {
 
     return (
         <div id='inicio' className='col-12'>
-            <ListaJuegos></ListaJuegos>
-            <ScrollUp></ScrollUp>
+            <div className='row'>
+                <div className="col-11">
+                    <ListaJuegos></ListaJuegos>
+                </div>
+                <div className="col-1">
+                    <ScrollUp></ScrollUp>
+                </div>
+            </div>
         </div>
     )
 }

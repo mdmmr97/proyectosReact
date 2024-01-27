@@ -13,7 +13,7 @@ const Juego = (props) => {
     }
 
     return (
-        <div className="col-3">
+        <div className="col-3 col-sm-4">
             <div className="card" style={{width: 300}}>
             <img src={props.juego.thumbnail} className="card-img-top" alt="Portada del Juego"/>
                 <div className="card-body">

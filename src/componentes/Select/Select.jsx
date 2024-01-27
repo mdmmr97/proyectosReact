@@ -4,15 +4,10 @@ const Select =(props)=> {
     const [valor, setValor] = useState('');
 
     function guardarSeleccion(e){
-        e.preventDefault();
-        setValor(e.target.value);
-        props.manejardatos(props.titulo, valor);
-        console.log( 'Mandamos el valor ' + valor);
-    }
 
-    function selecValor(e){
         setValor(e.target.value);
-        console.log(e.target.value);
+        console.log( e.target.value);
+        props.manejardatos(props.titulo, e.target.value);
     }
 
     return (

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
-import GeneroContext from "../../contexto/GeneroContext";
-import PlataformaContext from "../../contexto/PlataformaContext";
-import OrdenContext from "../../contexto/OrdenContext";
+import {OrdenProvider, useOrdenContext} from '../../contexto/OrdenContext';
+import {GeneroProvider, useGeneroContext} from '../../contexto/GeneroContext';
+import {PlataformaProvider, usePlataformaContext} from '../../contexto/PlataformaContext';
 
 import Juego from "../Juego/Juego";
 import { getAllPosts } from "../../servicios/posts/getAllPosts";
@@ -12,9 +12,9 @@ const ListaJuegos = () => {
     const [listaJuegos, setListaJuegos] = useState([]);
     const [buscando, setBuscando] = useState(false);
 
-    const genero = useContext(GeneroContext);
-    const plataforma = useContext(PlataformaContext);
-    const ordenar = useContext(OrdenContext);
+    const {ordencontext, setContexto} = useOrdenContext(OrdenProvider);
+    const {generocontext, setGeneroContext} = useGeneroContext(GeneroProvider);
+    const {plataformacontext, setPlataformaContext} = usePlataformaContext(PlataformaProvider);  
 
     function obtenerPosts(){
 
@@ -29,15 +29,15 @@ const ListaJuegos = () => {
     useEffect(obtenerPosts, []);
 
     function filtrarGenero(juego){
-        return genero === 'Todos' || juego.genre === genero;
+        return generocontext === 'Todos' || juego.genre === generocontext;
     }
 
     function filtrarPlataforma(juego){
-        return plataforma === 'Todos' || juego.platform === plataforma;
+        return plataformacontext === 'Todos' || juego.platform === plataformacontext;
     }
 
     function ordenarTitulo(juego1, juego2){
-        switch (ordenar) {
+        switch (ordencontext) {
             case 'Z .. A':
                 return juego2.title.localeCompare(juego1.title);
             case 'A .. Z':
