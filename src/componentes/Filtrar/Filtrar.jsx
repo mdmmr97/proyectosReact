@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import '../../App.css'
 import {GeneroProvider, useGeneroContext} from '../../contexto/GeneroContext';
 import {PlataformaProvider, usePlataformaContext} from '../../contexto/PlataformaContext';
 

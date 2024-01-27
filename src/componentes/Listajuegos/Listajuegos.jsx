@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import '../../App.css';
 import {OrdenProvider, useOrdenContext} from '../../contexto/OrdenContext';
 import {GeneroProvider, useGeneroContext} from '../../contexto/GeneroContext';
 import {PlataformaProvider, usePlataformaContext} from '../../contexto/PlataformaContext';

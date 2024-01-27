@@ -15,15 +15,15 @@ function App() {
 
   return (
     <>
-      <h1>{titulo}</h1>
+      <h1 className='bg-dark text-white position-sticky top-0'>{titulo}</h1>
       <div className='row'>
         <GeneroProvider>
           <PlataformaProvider>
             <OrdenProvider>
-              <div className='col-3'>
+              <div className='col-2 pe-0 filtros bg-dark text-white bottom-0'>
                 <Filtros></Filtros>
               </div>
-              <div className='col-9'>
+              <div className='col-9 cuerpo'>
                 <Cuerpo></Cuerpo>
               </div>
             </OrdenProvider>

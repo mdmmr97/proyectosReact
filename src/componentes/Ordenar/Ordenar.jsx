@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../../App.css'
 import {OrdenProvider, useOrdenContext} from '../../contexto/OrdenContext';
 
 const Ordenar = (props) => {

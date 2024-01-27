@@ -1,4 +1,5 @@
 import React from 'react'
+import '../../App.css'
 import Ordenar from '../Ordenar/Ordenar'
 import Filtrar from '../Filtrar/Filtrar'
 

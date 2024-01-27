@@ -14,49 +14,16 @@
   align-items: center;
 }
 
-img {
-  max-width: 100%;
-  display: block;
+.scroll-up{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: #007bff;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  display: none;
 }
-
-figure {
-  margin: 0;
-  display: grid;
-  grid-template-rows: 1fr auto;
-  margin-bottom: 10px;
-  break-inside: avoid;
-  border : 1px solid grey;
-  background-color: lightgray;
-}
-
-figure > img {
-  grid-row: 1 / -1;
-  grid-column: 1;
-  justify-self: center;
-}
-
-figcaption {    
-  grid-row: 3;
-  grid-column: 1;
-  background-color: lightgray;
-  font-size: 18px;
-  font-weight: bold;
-  padding: .2em .5em;
-  justify-self: start; 
-}
-
-.ju-plataforma {
-  padding: .2em 1em;
-  justify-self: left;
-  font-size: 13px;
-  text-align: left;
-}
-
-.ju-url {
-  padding: .2em .8em;
-  justify-self: start;
-  margin-top: 0px;
-  font-size: 15px;
-}
-
-.ju-destacado {font-weight: bold;}

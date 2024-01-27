@@ -1,3 +1,4 @@
+import '../../App.css';
 const Juego = (props) => {
 
     const SEPARADOR = '-';
@@ -13,14 +14,14 @@ const Juego = (props) => {
     }
 
     return (
-        <div className="col-3 col-sm-4">
-            <div className="card" style={{width: 300}}>
+        <div className="col-3">
+            <div className="card">
             <img src={props.juego.thumbnail} className="card-img-top" alt="Portada del Juego"/>
                 <div className="card-body">
                     <h2 className="card-title">{props.juego.title}</h2>
-                    <p className="card-text"><span>Plataforma: </span>{props.juego.platform}</p>
-                    <p className="card-text"><span>Lanzamiento: </span>{formatoFecha(props.juego.release_date)}</p>
-                    <p className="card-text"><span>Género: </span>{props.juego.genre}</p>
+                    <p className="card-text"><span>Plataforma: <br/></span>{props.juego.platform}</p>
+                    <p className="card-text"><span>Lanzamiento: <br/></span>{formatoFecha(props.juego.release_date)}</p>
+                    <p className="card-text"><span>Género: <br/></span>{props.juego.genre}</p>
                     <a href={props.juego.freetogame_profile_url} className="card-link">Descargatelo</a>
                 </div>
             </div>

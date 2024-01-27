@@ -3,39 +3,113 @@
   max-height: 100%;
 }
 
-/*.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body{
+  margin: 0;
+  padding: 0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.row{
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+h1{
+  height: 50px;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  z-index: 1;
 }
 
-.card {
-  padding: 2em;
+.filtros{
+  text-align: center;
+  height: 100vh;
+  align-items: center;
+  margin: 25px 25px 0 0;
+  position: sticky;
+  top: 65px
 }
 
-.read-the-docs {
-  color: #888;
+.filtros div{
+  margin: 0;
+  padding: 0;
 }
-*/
+
+.filtros h2{
+  margin: 10px 0px;
+  font-size: 18px;
+  text-align: center;
+  padding: 0;
+}
+
+.filtros h3{
+  margin: 10px 0 0 0;
+  font-size: 14px;
+  text-align: center;
+  padding: 0;
+}
+
+.filtros select{
+  margin: 5px 0px;
+  text-align: center;
+  font-size: 12px;
+  padding: 0;
+  justify-content: center;
+}
+
+.cuerpo{
+ position: relative;
+}
+
+#scroll-up{
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  padding: 0;
+  border-radius: 4px;
+}
+
+#scroll-up svg{
+  margin: 0;
+  padding: 0;
+}
+
+.ajaxloader{
+  width: 50%;
+  height: 50%;
+  display: flex;
+}
+
+.ajaxloader img{
+  align-items: center;
+  justify-content: center;
+  width: 10%;
+  height: 10%;
+}
+
+.card{
+  width: 100%;
+  height: 375px !important;
+  margin: 10px;
+  background-color:bisque !important;
+}
+
+.card h2{
+  font-size: 18px;
+}
+
+.card span{
+  font-weight: bold;
+}
+
+.card-text{
+  margin: 5px;
+  font-size: 14px;
+}
