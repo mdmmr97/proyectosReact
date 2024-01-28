@@ -1,8 +1,11 @@
 import '../../App.css';
+
+//Componente que muestra un juego
 const Juego = (props) => {
 
     const SEPARADOR = '-';
 
+    //Funcion que formatea la fecha
     function formatoFecha(fecha){
 
         let date = new Date(fecha);
@@ -13,6 +16,7 @@ const Juego = (props) => {
         return dia + SEPARADOR + mes + SEPARADOR + anio;
     }
 
+    //Muestro una targeta con la informacion del juego
     return (
         <div className="col-3">
             <div className="card">

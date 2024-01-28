@@ -1,3 +1,4 @@
+//Array de generos de juegos
 const genero = ["Todos",
                 "Shooter",
                 "Strategy",

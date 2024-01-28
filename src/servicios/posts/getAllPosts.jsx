@@ -1,8 +1,6 @@
-//import fetch from 'node-fetch';
-
+//Obtenemos los posts de la API
 export async function getAllPosts () {
 
-  //const fetch = require('node-fetch');
   const url = 'https://free-to-play-games-database.p.rapidapi.com/api/games';
   const options = {
     method: 'GET',

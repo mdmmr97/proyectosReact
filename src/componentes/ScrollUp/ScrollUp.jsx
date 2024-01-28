@@ -1,7 +1,9 @@
 import '../../App.css';
 
+//Con este componente muestro un boton para volver al inicio de la pagina
 const ScrollUp = () => {
-
+    //Cuando el usuario hace click en el boton, se ejecuta esta funcion que lleva al inicio 
+    //de la pagina
     function topFunction() {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
