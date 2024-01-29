@@ -3,7 +3,7 @@ import Empresa from '../assets/Imagenes/empresa.jpg'
 import Centro from '../assets/Imagenes/school.jpg'
 import Estudiante from '../assets/Imagenes/student.jpg'
 
-import {Route, Switch} from "wouter";
+import {Link} from "wouter";
 
 const Home = () => {
 
@@ -13,21 +13,25 @@ const Home = () => {
                 <div className="row">
                     <div className="col-12 col-md-4 p-2 empresa">
                         <div className='tarjeta'>
-                            <img src={Empresa} alt="imagen Empresa" />
+                            <Link to="/empresa">
+                                <img src={Empresa} alt="imagen Empresa" />
+                            </Link>
                         </div>
                         
                     </div>
                     <div className="col-12 col-md-4 p-2 centro">
                         <div className='tarjeta'>
-                            
+                            <Link to="/centroeducativo">
                                 <img src={Centro} alt="imagen Centro" />
-                            
+                            </Link>
                         </div>
                         
                     </div>
                     <div className="col-12 col-md-4 p-2 estudiante">
                         <div className='tarjeta'>
-                            <img src={Estudiante} alt="imagen estudiante" />
+                            <Link to="/alumno">
+                                <img src={Estudiante} alt="imagen estudiante" />
+                            </Link>
                         </div>
                     </div>
                 </div>

@@ -2,13 +2,15 @@ import LogoMarcaPersonal from '../assets/Imagenes/mp-logoNaranja100.png'
 import BanderaEspana from '../assets/Imagenes/banderaSP.svg'
 import BanderaUK from '../assets/Imagenes/banderaUK.svg'
 
+import {Link} from "wouter";
+
 const Cabecera = () => {
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">
+                <Link to="/" className="navbar-brand">
                     <img src={LogoMarcaPersonal} alt="Logo Pagina" width='50px' height='50px'/>
-                </a>
+                </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span className="navbar-toggler-icon"></span>
                 </button>
