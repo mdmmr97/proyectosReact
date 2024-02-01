@@ -1,10 +1,17 @@
-import LogoMarcaPersonal from '../assets/Imagenes/mp-logoNaranja100.png'
-import BanderaEspana from '../assets/Imagenes/banderaSP.svg'
-import BanderaUK from '../assets/Imagenes/banderaUK.svg'
+import LogoMarcaPersonal from '../../assets/Imagenes/mp-logoNaranja100.png'
+import BanderaEspana from '../../assets/Imagenes/banderaSP.svg'
+import BanderaUK from '../../assets/Imagenes/banderaUK.svg'
+import { IdiomaProvider, useIdiomaContext } from '../../Contexto/contextoIdiomas';
 
 import {Link} from "wouter";
 
 const Cabecera = () => {
+    const { idiomacontext, cambiarIdioma} = useIdiomaContext(IdiomaProvider);
+
+    function darIdioma(idioma){
+        cambiarIdioma(idioma);
+        console.log("Idioma seleccionado: " + idiomacontext);
+    }
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
@@ -20,14 +27,14 @@ const Cabecera = () => {
                             <h1>Marca Personal FP</h1>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">
+                            <div onClick={darIdioma('español')}>
                                 <img src={BanderaEspana} alt="Idioma Español" width={40} height={30}/>
-                            </a>
+                            </div>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">
+                            <div onClick={darIdioma('ingles')}>
                                 <img src={BanderaUK} alt="Idioma Español" width={40} height={30}/>
-                            </a>
+                            </div>
                         </li>
                     </ul>
                 </div>

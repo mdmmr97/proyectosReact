@@ -1,7 +1,7 @@
-import Pie from './Pie'
-import Empresa from '../assets/Imagenes/empresa.jpg'
-import Centro from '../assets/Imagenes/school.jpg'
-import Estudiante from '../assets/Imagenes/student.jpg'
+import Pie from '../../Componentes/Pie/Pie';
+import Empresa from '../../assets/Imagenes/empresa.jpg'
+import Centro from '../../assets/Imagenes/school.jpg'
+import Estudiante from '../../assets/Imagenes/student.jpg'
 
 import {Link} from "wouter";
 

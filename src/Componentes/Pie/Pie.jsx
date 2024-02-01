@@ -1,13 +1,26 @@
-import Logo from '../assets/Imagenes/mp-logoNaranja100.png'
+import React, { useEffect, useState } from 'react';
+import Logo from '../../assets/Imagenes/mp-logoNaranja100.png';
+import datos from '../../Mocks/mock-pie';
+
 
 const Pie = () => {
+    const [datosPie, setDatosPie] = useState(datos);
     return (
         <footer>
             <div className="container-fluid">
                 <div className="d-flex justify-content-center">
-                    <div><p>hola</p></div>
-                    <div><p>hola</p></div>
-                    <div><p>hola</p></div>
+                    <div>
+                        <p>Empresas</p>
+                        <p>{datosPie.empresas}</p>
+                    </div>
+                    <div>
+                        <p>Proyectos</p>
+                        <p>{datosPie.proyectos}</p>
+                    </div>
+                    <div>
+                        <p>Alumnos</p>
+                        <p>{datosPie.alumnos}</p>
+                    </div>
                 </div>
                 <div className="text-center">
                     <a href="https://cifpcarlos3.es/es">
