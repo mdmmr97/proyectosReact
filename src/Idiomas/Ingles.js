@@ -1,4 +1,4 @@
-const español = {
+const english = {
     "PAGE_EMPRESAS_TITULO": "COMPANIES",
     "PAGE_CENTRO_TITULO": "EDUCATIONAL CENTER", 
     "PAGE_ALUMNO_TITULO": "STUDENS",
@@ -12,4 +12,4 @@ const español = {
     "FOOTER_ALUMNOS" : "Studens",
     "FOOTER_MESSAGE" : "Web Design",
 };
-export default español;
+export default english;

@@ -18,6 +18,8 @@ export const IdiomaProvider = ({ children }) => {
         }
     };
 
+    
+
     return (
         <IdiomaContext.Provider value={{ idiomacontext, cambiarIdioma }}>
             {children}

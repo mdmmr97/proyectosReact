@@ -9,6 +9,11 @@ import Alumno from './Paginas/Alumno/Alumno'
 import {IdiomaProvider} from './Contexto/contextoIdiomas'
 
 function App() {
+  /**
+   * TODO: Importados
+   * npm install woouter
+   * npm install bootstrap
+   */
 
   return (
     <>

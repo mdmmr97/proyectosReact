@@ -10,7 +10,7 @@ const Cabecera = () => {
 
     function darIdioma(idioma){
         cambiarIdioma(idioma);
-        console.log("Idioma seleccionado: " + idiomacontext);
+        console.log("Idioma seleccionado: " + idioma);
     }
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -23,16 +23,17 @@ const Cabecera = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
+                        
                         <li>
                             <h1>Marca Personal FP</h1>
                         </li>
                         <li className="nav-item">
-                            <div onClick={darIdioma('español')}>
+                            <div onClick={() => darIdioma('es')}>
                                 <img src={BanderaEspana} alt="Idioma Español" width={40} height={30}/>
                             </div>
                         </li>
                         <li className="nav-item">
-                            <div onClick={darIdioma('ingles')}>
+                            <div onClick={() => darIdioma('en')}>
                                 <img src={BanderaUK} alt="Idioma Español" width={40} height={30}/>
                             </div>
                         </li>

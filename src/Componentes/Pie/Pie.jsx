@@ -1,27 +1,46 @@
 import React, { useEffect, useState } from 'react';
 import Logo from '../../assets/Imagenes/mp-logoNaranja100.png';
-import datos from '../../Mocks/mock-pie';
+
+import { IdiomaProvider, useIdiomaContext } from '../../Contexto/contextoIdiomas';
+import { getAllPie } from '../../Servicios/posts/getAllPie';
 
 
 const Pie = () => {
-    const [datosPie, setDatosPie] = useState(datos);
+    const [busqueda, setBusqueda] = useState(false);
+    const {idiomacontext} = useIdiomaContext(IdiomaProvider);
+    const [datosPie, setDatosPie] = useState([]);
+
+    function ObtenerPostPie(){
+        setBusqueda(true);
+        getAllPie().then(datos => {
+            setDatosPie(datos);
+            console.log(datos);
+            setBusqueda(false);
+        });
+        console.log("Idioma seleccionado a: " + idiomacontext.FOOTER_PROYECT);
+        console.log("datos pie a: " + datosPie.empresas);
+    }
+    useEffect(ObtenerPostPie, []);
+
     return (
         <footer>
             <div className="container-fluid">
+                {busqueda ? <p>Cargando...</p> :
                 <div className="d-flex justify-content-center">
                     <div>
-                        <p>Empresas</p>
+                        <p>{idiomacontext.FOOTER_EMPRESAS}</p>
                         <p>{datosPie.empresas}</p>
                     </div>
                     <div>
-                        <p>Proyectos</p>
+                        <p>{idiomacontext.FOOTER_PROYECT}</p>
                         <p>{datosPie.proyectos}</p>
                     </div>
                     <div>
-                        <p>Alumnos</p>
+                        <p>{idiomacontext.FOOTER_ALUMNOS}</p>
                         <p>{datosPie.alumnos}</p>
                     </div>
-                </div>
+                </div> 
+                }
                 <div className="text-center">
                     <a href="https://cifpcarlos3.es/es">
                         <h2>CIFP Carlos III</h2>
@@ -51,7 +70,7 @@ const Pie = () => {
                 <div className="d-flex justify-content-center">
                     <img src={Logo} alt="Logo Pagina" width={40} height={40}/>
                     <p>
-                        Marca Personal FP | Diseño Web CFGS Desarrollo de Aplicaciones Web © 2023
+                        Marca Personal FP | {idiomacontext.FOOTER_MESSAGE} CFGS Desarrollo de Aplicaciones Web © 2023
                     </p>
                 </div>
             </div>
