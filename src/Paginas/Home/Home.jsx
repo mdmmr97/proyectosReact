@@ -5,6 +5,7 @@ import Estudiante from '../../assets/Imagenes/student.jpg'
 
 import { IdiomaProvider, useIdiomaContext } from '../../Contexto/contextoIdiomas';
 import {Link} from "wouter";
+import ImagenHome from '../../Componentes/ImagenHome/ImagenHome';
 
 const Home = () => {
     const { idiomacontext } = useIdiomaContext(IdiomaProvider);
@@ -12,28 +13,22 @@ const Home = () => {
     return (
         <div>
             <div className="container-fluid">
-                <div className="row">
-                    <div className="col-12 col-md-4 p-2 empresa">
-                        <Link to="/empresa">
-                            <div className='tarjeta' texto={idiomacontext.IMAGEN_HOME_EMPRESAS}>
-                                <img src={Empresa} alt="imagen Empresa" />
-                            </div>
-                        </Link>
-                    </div>
-                    <div className="col-12 col-md-4 p-2 centro">
-                        <Link to="/centroeducativo">
-                            <div className='tarjeta' texto={idiomacontext.IMAGEN_HOME_CENTROS}>
-                                    <img src={Centro} alt="imagen Centro" />
-                            </div>
-                        </Link>     
-                    </div>
-                    <div className="col-12 col-md-4 p-2 estudiante">
-                        <Link to="/alumno">
-                            <div className='tarjeta' texto={idiomacontext.IMAGEN_HOME_ALUMNOS}>
-                                <img src={Estudiante} alt="imagen estudiante" />
-                            </div>
-                        </Link>
-                    </div>
+                <div className="row my-5 mx-3">
+                    <ImagenHome nombreclase="empresa" 
+                                rutapagina="/empresa" 
+                                texto={idiomacontext.IMAGEN_HOME_EMPRESAS} 
+                                imagen={Empresa}
+                    />
+                    <ImagenHome nombreclase="centro"
+                                rutapagina="/centroeducativo"
+                                texto={idiomacontext.IMAGEN_HOME_CENTROS}
+                                imagen={Centro}
+                    />
+                    <ImagenHome nombreclase="estudiante"
+                                rutapagina="/alumno"
+                                texto={idiomacontext.IMAGEN_HOME_ALUMNOS}
+                                imagen={Estudiante}
+                    />
                 </div>
             </div>
             <Pie></Pie>

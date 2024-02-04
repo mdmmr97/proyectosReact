@@ -3,6 +3,8 @@ import Logo from '../../assets/Imagenes/mp-logoNaranja100.png';
 
 import { IdiomaProvider, useIdiomaContext } from '../../Contexto/contextoIdiomas';
 import { getAllPie } from '../../Servicios/posts/getAllPie';
+import DatosFoter from '../DatosFoter/DatosFoter';
+import EnlacesRedes from '../EnlacesRedes/EnlacesRedes';
 
 
 const Pie = () => {
@@ -27,21 +29,14 @@ const Pie = () => {
             <div className="container-fluid">
                 {busqueda ? <p>Cargando...</p> :
                 <div className="d-flex justify-content-center">
-                    <div>
-                        <p>{idiomacontext.FOOTER_EMPRESAS}</p>
-                        <p>{datosPie.empresas}</p>
-                    </div>
-                    <div>
-                        <p>{idiomacontext.FOOTER_PROYECT}</p>
-                        <p>{datosPie.proyectos}</p>
-                    </div>
-                    <div>
-                        <p>{idiomacontext.FOOTER_ALUMNOS}</p>
-                        <p>{datosPie.alumnos}</p>
-                    </div>
+                    <div className='col-3'></div>
+                    <DatosFoter Nombre={idiomacontext.FOOTER_EMPRESAS} Cantidad={datosPie.empresas}/>
+                    <DatosFoter Nombre={idiomacontext.FOOTER_PROYECT} Cantidad={datosPie.proyectos}/>
+                    <DatosFoter Nombre={idiomacontext.FOOTER_ALUMNOS} Cantidad={datosPie.alumnos}/>
+                    <div className='col-3'></div>
                 </div> 
                 }
-                <div className="text-center">
+                <div className="text-center centro">
                     <a href="https://cifpcarlos3.es/es">
                         <h2>CIFP Carlos III</h2>
                     </a>
@@ -49,29 +44,23 @@ const Pie = () => {
                         C/ Carlos III, 30201 - Cartagena | <a href="mailto:30019702@murciaeduca.es">30019702@murciaeduca.es</a> | <a href="tel:968321301">968321301</a>
                     </p>
                 </div>
-                <div className="text-center">  
-                    <a href="https://www.facebook.com/cifpcarlos3">
-                        <i className="bi bi-facebook"></i>
-                    </a>
-                    <a href="https://www.twitter.com/cifpcarlos3">
-                        <i className="bi bi-twitter-x"></i>
-                    </a>
-                    <a href="https://www.instagram.com/cifpcarlos3">
-                        <i className="bi bi-instagram"></i>
-                    </a>
-                    <a href="https://www.tiktok.com/@cifpcarlos3">
-                        <i className="bi bi-tiktok"></i>
-                    </a>
-                    <a href="https://www.youtube.com/c/cifpcarlosiiicartagena">
-                        <i className="bi bi-youtube"></i>
-                    </a> 
+                <div className="row d-flex justify-content-center redes">  
+                    <EnlacesRedes enlace="https://www.facebook.com/cifpcarlos3" tipo="bi bi-facebook"/>
+                    <EnlacesRedes enlace="https://www.twitter.com/cifpcarlos3" tipo="bi bi-twitter-x"/>
+                    <EnlacesRedes enlace="https://www.instagram.com/cifpcarlos3" tipo="bi bi-instagram"/>
+                    <EnlacesRedes enlace="https://www.tiktok.com/@cifpcarlos3" tipo="bi bi-tiktok"/>
+                    <EnlacesRedes enlace="https://www.youtube.com/c/cifpcarlosiiicartagena" tipo="bi bi-youtube"/>
                 </div>
                 <hr/>
-                <div className="d-flex justify-content-center">
-                    <img src={Logo} alt="Logo Pagina" width={40} height={40}/>
-                    <p>
-                        Marca Personal FP | {idiomacontext.FOOTER_MESSAGE} CFGS Desarrollo de Aplicaciones Web © 2023
-                    </p>
+                <div className="row d-flex justify-content-center copi">
+                    <div className='col-1 d-flex justify-content-end align-items-center pe-0'>
+                        <img  src={Logo} alt="Logo Pagina" width={40} height={40}/>
+                    </div>
+                    <div className='col-8 d-flex align-items-center m-0'>
+                        <p>
+                            Marca Personal FP | {idiomacontext.FOOTER_MESSAGE} CFGS Desarrollo de Aplicaciones Web © 2024
+                        </p>
+                    </div>
                 </div>
             </div>
         </footer>

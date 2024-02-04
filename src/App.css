@@ -1,9 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;800&display=swap');
 
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
+  font-family: 'Roboto Slab', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
 }
+
+nav{
+  padding: 0 !important;
+}
+
+.navegador{
+  background-color: #364f59;
+  color: #f1f1e6;
+}
+
 .tarjeta {
   position: relative;
   display: flex;
@@ -51,11 +65,12 @@
 
 .tarjeta:hover::before,
 .tarjeta:hover:after {
+  color: #364f59;
   width: 100%;
   height: 100%;
   border-radius: 15px;
   transition: all 0.5s;
-  background-color: skyblue;
+  background-color: #b8d3df;
 }
 
 .empresa .tarjeta:hover:after{
@@ -66,6 +81,48 @@
 }
 .estudiante .tarjeta:hover:after {
   content: attr(texto);
+}
+
+footer{
+  background-color: #364f59;
+  color: #f1f1e6;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+}
+
+footer .resaltar{
+  background-color: #ce7d2d;
+  color: #364f59;
+  border: 2px solid #364f59;
+  border-top: 0;
+  margin-bottom: 20px;
+}
+
+footer .resaltar > p:nth-child(1){
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+footer a{
+  color: #f1f1e6;
+  text-decoration: none;
+}
+
+.redes a{
+  margin: 1%;
+  padding: 5px;
+  border-radius: 10%;
+  font-size: 20px;
+}
+
+.redes a:hover{
+  background-color: #ce7d2d;
+  color: #364f59;
+}
+
+.copi p{
+  margin: 0;
 }
 
 
