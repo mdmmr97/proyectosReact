@@ -1,7 +1,12 @@
+import { IdiomaProvider, useIdiomaContext } from '../../Contexto/contextoIdiomas';
+import MenuEmpresa from "../../Componentes/MenuEmpresa/MenuEmpresa";
+
 const BusquedaAlumnos = () => {
+    const {idiomacontext} = useIdiomaContext(IdiomaProvider);
     return (
         <div>
-            <h1>Busqueda de Alumnos</h1>
+            <MenuEmpresa></MenuEmpresa>
+            <h2>Alumnos</h2>
         </div>
     )
 };

@@ -18,6 +18,16 @@ nav{
   color: #f1f1e6;
 }
 
+.nav-link{
+  color: #f1f1e6 !important;
+  padding-left: 10px;
+}
+
+.nav-item > h2{
+  color: #ce7d2d;
+}
+
+
 .tarjeta {
   position: relative;
   display: flex;

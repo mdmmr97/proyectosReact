@@ -1,5 +1,8 @@
 const spanish = {
-    "PAGE_EMPRESAS_TITULO": "EMPRESA",
+    "PAGE_EMPRESAS_TITULO": "Empresa",
+    "PAGES_EMPRESAS_PROYECTOS": "Proyectos",
+    "PAGES_EMPRESAS_ALUMNOS": "Alumnos",
+
     "PAGE_CENTRO_TITULO": "CENTRO EDUCATIVO", 
     "PAGE_ALUMNO_TITULO": "ALUMNOS",
 

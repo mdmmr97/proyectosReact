@@ -2,27 +2,14 @@ import React, { useEffect, useState } from 'react';
 import Logo from '../../assets/Imagenes/mp-logoNaranja100.png';
 
 import { IdiomaProvider, useIdiomaContext } from '../../Contexto/contextoIdiomas';
-import { getAllPie } from '../../Servicios/posts/getAllPie';
+import usePie from '../../Hooks/usePie';
 import DatosFoter from '../DatosFoter/DatosFoter';
 import EnlacesRedes from '../EnlacesRedes/EnlacesRedes';
 
 
 const Pie = () => {
-    const [busqueda, setBusqueda] = useState(false);
     const {idiomacontext} = useIdiomaContext(IdiomaProvider);
-    const [datosPie, setDatosPie] = useState([]);
-
-    function ObtenerPostPie(){
-        setBusqueda(true);
-        getAllPie().then(datos => {
-            setDatosPie(datos);
-            console.log(datos);
-            setBusqueda(false);
-        });
-        console.log("Idioma seleccionado a: " + idiomacontext.FOOTER_PROYECT);
-        console.log("datos pie a: " + datosPie.empresas);
-    }
-    useEffect(ObtenerPostPie, []);
+    const {busqueda, datosPie} = usePie();
 
     return (
         <footer>
