@@ -12,7 +12,7 @@ const Pie = () => {
     const {busqueda, datosPie} = usePie();
 
     return (
-        <footer>
+        <footer className='position-absolute bottom-0'>
             <div className="container-fluid">
                 {busqueda ? <p>Cargando...</p> :
                 <div className="d-flex justify-content-center">

@@ -27,7 +27,6 @@ nav{
   color: #ce7d2d;
 }
 
-
 .tarjeta {
   position: relative;
   display: flex;
@@ -97,7 +96,6 @@ footer{
   background-color: #364f59;
   color: #f1f1e6;
   text-align: center;
-  bottom: 0;
   width: 100%;
 }
 
@@ -134,5 +132,3 @@ footer a{
 .copi p{
   margin: 0;
 }
-
-
