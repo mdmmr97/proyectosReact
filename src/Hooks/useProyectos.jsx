@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getProyectoss } from '../Servicios/posts/getProyectos';
+import { getProyectos } from '../Servicios/posts/getProyectos';
 
 const useProyectos = () => {
     const [busqueda, setBusqueda] = useState(false);
@@ -7,7 +7,7 @@ const useProyectos = () => {
 
     function ObtenerPostProyectos(){
         setBusqueda(true);
-        getProyectoss().then(datos => {
+        getProyectos().then(datos => {
             setProyectos(datos);
             setBusqueda(false);
         });

@@ -1,4 +1,6 @@
 import { IdiomaProvider, useIdiomaContext } from '../../Contexto/contextoIdiomas';
+import { FamiliaProvider } from '../../Contexto/contextoFamProf';
+
 import MenuEmpresa from "../../Componentes/MenuEmpresa/MenuEmpresa";
 import ListaFamiliasProfesionales from '../../Componentes/ListaFamiliasProfesionales/ListaFamiliasProfesionales';
 import ResultadosBusquedaProyectos from '../../Componentes/ResultadosBusquedaProyectos/ResultadosBusquedaProyectos';
@@ -8,8 +10,12 @@ const BusquedaProyectos = () => {
     return (
         <div>
             <MenuEmpresa></MenuEmpresa>
-            <ListaFamiliasProfesionales></ListaFamiliasProfesionales>
-            <ResultadosBusquedaProyectos></ResultadosBusquedaProyectos>
+            <FamiliaProvider>
+                <div className='container-fluid'>
+                    <ListaFamiliasProfesionales></ListaFamiliasProfesionales>
+                    <ResultadosBusquedaProyectos></ResultadosBusquedaProyectos>
+                </div>
+            </FamiliaProvider>
         </div>
     )
 };

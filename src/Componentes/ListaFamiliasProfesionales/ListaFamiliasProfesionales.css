@@ -1,3 +1,3 @@
-.row > *{
-    width: fit-content !important;
+.familia .row > *{
+    width: fit-content;
 }
