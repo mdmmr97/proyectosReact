@@ -1,4 +1,3 @@
-import { IdiomaProvider, useIdiomaContext } from '../../Contexto/contextoIdiomas';
 import { FamiliaProvider } from '../../Contexto/contextoFamProf';
 
 import MenuEmpresa from "../../Componentes/MenuEmpresa/MenuEmpresa";
@@ -6,7 +5,6 @@ import ListaFamiliasProfesionales from '../../Componentes/ListaFamiliasProfesion
 import ResultadosBusquedaProyectos from '../../Componentes/ResultadosBusquedaProyectos/ResultadosBusquedaProyectos';
 
 const BusquedaProyectos = () => {
-    const {idiomacontext} = useIdiomaContext(IdiomaProvider);
     return (
         <div>
             <MenuEmpresa></MenuEmpresa>

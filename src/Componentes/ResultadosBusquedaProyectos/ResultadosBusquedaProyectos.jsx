@@ -43,48 +43,6 @@ export default ResultadosBusquedaProyectos;
     "fichero": null,
     "ciclos": [
         {
-            "id": 10,
-            "codCiclo": "SEAD1",
-            "codFamilia": "AFD",
-            "familia_id": 2,
-            "grado": "B\u00c1SICA",
-            "nombre": "Profesional B\u00e1sico en Servicios Administrativos",
-            "created_at": null,
-            "updated_at": null,
-            "pivot": {
-                "proyecto_id": 1,
-                "ciclo_id": 10
-            },
-            "familia_profesional": {
-                "id": 2,
-                "codigo": "AFD",
-                "nombre": "ADMINISTRACI\u00d3N Y GESTI\u00d3N",
-                "created_at": null,
-                "updated_at": null
-            }
-        },
-        {
-            "id": 25,
-            "codCiclo": "DGPG3",
-            "codFamilia": "ARG",
-            "familia_id": 5,
-            "grado": "G.S.",
-            "nombre": "T\u00e9cnico Superior en Dise\u00f1o y Gesti\u00f3n de la Producci\u00f3n Gr\u00e1fica",
-            "created_at": null,
-            "updated_at": null,
-            "pivot": {
-                "proyecto_id": 1,
-                "ciclo_id": 25
-            },
-            "familia_profesional": {
-                "id": 5,
-                "codigo": "ARG",
-                "nombre": "ARTES GR\u00c1FICAS",
-                "created_at": null,
-                "updated_at": null
-            }
-        },
-        {
             "id": 136,
             "codCiclo": "INAM2",
             "codFamilia": "MAM",

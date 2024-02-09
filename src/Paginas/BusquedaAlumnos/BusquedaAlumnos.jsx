@@ -1,12 +1,21 @@
-import { IdiomaProvider, useIdiomaContext } from '../../Contexto/contextoIdiomas';
+import { FamiliaProvider } from '../../Contexto/contextoFamProf';
+
 import MenuEmpresa from "../../Componentes/MenuEmpresa/MenuEmpresa";
+import ListaPerfilesCompetencias from '../../Componentes/ListaPerfilesCompetenciales/ListaPerfilesCompetenciales';
+import ListaFamiliasProfesionales from '../../Componentes/ListaFamiliasProfesionales/ListaFamiliasProfesionales';
+import ResultadosBusquedaAlumnos from '../../Componentes/ResultadosBusquedaAlumnos/ResultadosBusquedaAlumnos';
 
 const BusquedaAlumnos = () => {
-    const {idiomacontext} = useIdiomaContext(IdiomaProvider);
     return (
         <div>
             <MenuEmpresa></MenuEmpresa>
-            <h2>Alumnos</h2>
+            <FamiliaProvider>
+                <div className='container-fluid'>
+                    <ListaPerfilesCompetencias></ListaPerfilesCompetencias>
+                    <ListaFamiliasProfesionales></ListaFamiliasProfesionales>
+                    <ResultadosBusquedaAlumnos></ResultadosBusquedaAlumnos>
+                </div>
+            </FamiliaProvider>
         </div>
     )
 };
