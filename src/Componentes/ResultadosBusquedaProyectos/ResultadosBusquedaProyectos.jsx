@@ -16,10 +16,10 @@ const ResultadosBusquedaProyectos = () => {
     }
 
     return (
-        <div>
+        <div className="row">
             {busqueda ? <AjaxLoader></AjaxLoader> : 
             <div className="col-12">
-                <h3>Resultados</h3>
+                <h3 className="col-12">Resultados</h3>
                 <div className="row">
                     {datosProyectos.map(mostrarProyectos)}
                 </div>

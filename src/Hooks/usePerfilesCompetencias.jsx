@@ -10,7 +10,7 @@ const usePerfilesCompetencias = () => {
         getPerfilesCompetencias().then(datos => {
             console.log(datos);
             
-            setCompetencias(datos);
+            setCompetencias(datos.PerfilesCompetenciales);
             setBusqueda(false);
         });
     }

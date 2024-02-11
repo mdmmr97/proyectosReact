@@ -1,5 +1,5 @@
-export function getPerfilesCompetencias() {
-    return fetch("https://run.mocky.io/v3/89bda0a9-d7ce-4841-a092-3de8bdbd3210")
+export function getAlumnos() {
+    return fetch("https://run.mocky.io/v3/3d8e46e0-bac4-4aed-8fa2-69db9e53373d")
             .then(response => {
             const data = response.json();
             console.log(data);
