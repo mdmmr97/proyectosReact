@@ -1,27 +1,36 @@
 import useProyectos from "../../Hooks/useProyectos";
+import { FamiliaProvider, useFamiliaContext } from '../../Contexto/contextoFamProf';
 import AjaxLoader from "../../AjaxLoader/AjaxLoader";
 
 import ProyectoMinCard from "../ProyectoMinCard/ProyectoMinCard";
 
 const ResultadosBusquedaProyectos = () => {
     const {busqueda, datosProyectos} = useProyectos();
+    const {familiacontext } = useFamiliaContext(FamiliaProvider);
+    
+    function FiltrarDatos(proyecto) {
+        console.log(familiacontext);
+        return familiacontext.length === 0 || proyecto.ciclos.some(ciclo => familiacontext.includes(ciclo.familia_profesional.id.toString()));
+    }
 
     function mostrarProyectos(proyecto) {
-        return <ProyectoMinCard key={proyecto.id} 
-                                nombre={proyecto.nombre}
-                                alumnos={proyecto.estudiantes}
-                                tutor={proyecto.docente_id}
-                                ciclo={proyecto.ciclos}
-               />
+        return !proyecto ? 
+                <p>No hay proyectos que mostrar</p>
+                :
+                <ProyectoMinCard key={proyecto.id} 
+                                 nombre={proyecto.nombre}
+                                 alumnos={proyecto.estudiantes}
+                                 tutor={proyecto.docente_id}
+                                 ciclo={proyecto.ciclos}
+                />
     }
 
     return (
         <div className="row">
             {busqueda ? <AjaxLoader></AjaxLoader> : 
             <div className="col-12">
-                <h3 className="col-12">Resultados</h3>
                 <div className="row">
-                    {datosProyectos.map(mostrarProyectos)}
+                    {datosProyectos.filter(FiltrarDatos).map(mostrarProyectos)}
                 </div>
             </div>
             }

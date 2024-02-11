@@ -3,7 +3,7 @@
     min-height: 450px;
     max-height: 450px;
 
-    background-color: #212121 !important;
+    background-color: #364F59 !important;
     box-shadow: 5px 5px 8px #1b1b1b,
                -5px -5px 8px #272727;
     transition: 0.4s;
@@ -16,7 +16,7 @@
   .card-title {
     font-size: 18px;
     font-weight: 600;
-    color: #b2eccf !important;
+    color: #ce7d2d !important;
     margin: 15px 0 0 15px;
     min-height: 35px;
   }
@@ -24,7 +24,7 @@
   .card-subtitle {
     font-size: 15px;
     font-weight: 500;
-    color: #b2eccf !important;
+    color: #B8D3DF!important;
     min-height: 35px;
   }
   
@@ -44,10 +44,15 @@
 
   .card-body {
     margin: 13px 0 0 10px;
-    color: rgb(184, 184, 184) !important;
+    color: #f1f1e6 !important;
     font-size: 15px;
   }
   
   .by-name {
     font-weight: 700;
+    color: #ce7d2d !important;
   }
+
+.alumnos span{
+  display: block;
+}

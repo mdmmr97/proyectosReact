@@ -1,29 +1,38 @@
 import useAlumnos from "../../Hooks/useAlumnos";
+import { FamiliaProvider, useFamiliaContext } from '../../Contexto/contextoFamProf';
 import AjaxLoader from "../../AjaxLoader/AjaxLoader";
+
 
 import AlumnoMinCard from "../AlumnoMinCard/AlumnoMinCard";
 
 const ResultadosBusquedaAlumnos = () => {
     const {busqueda, datosAlumnos} = useAlumnos();
+    const {familiacontext } = useFamiliaContext(FamiliaProvider);
 
+    function FiltrarDatos(alumno) {
+        return familiacontext.length === 0 || alumno.ciclos.some(ciclo => familiacontext.includes(ciclo.familia_profesional.id.toString()));
+    }
+    
     function mostrarAlumnos(alumno) {
-        return <AlumnoMinCard key={alumno.id}
+        return  !alumno ? 
+                <p>No hay alumnos que mostrar</p>
+                :
+                <AlumnoMinCard key={alumno.id}
                               nombre={alumno.nombre}
                               apellidos={alumno.apellidos}
                               avatar={alumno.avatar}
                               idiomas={alumno.idiomas}
                               ciclo={alumno.ciclos}
                               informacion={alumno.sobre_mi}
-              />
+                />           
     }
 
     return (
         <div className="row">
             {busqueda ? <AjaxLoader></AjaxLoader> : 
             <div className="col-12">
-                <h3 className="col-12">Resultados</h3>
                 <div className="row">
-                    {datosAlumnos.map(mostrarAlumnos)}
+                    {datosAlumnos.filter(FiltrarDatos).map(mostrarAlumnos)}
                 </div>
             </div>
             }

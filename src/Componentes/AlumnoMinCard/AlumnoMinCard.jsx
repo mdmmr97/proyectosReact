@@ -27,7 +27,7 @@ const AlumnoMinCard = (props) => {
                 <h5 className="card-title text-center mx-0">{props.nombre} {props.apellidos}</h5>
                 <div className="card-body m-0 p-2 ">
                     {props.idiomas.map(ObtenerIdiomas)}
-                    <p className="card-text">Perfiles</p>
+                    <p className="card-text"><span className="by-name">Perfiles:</span></p>
                     <p className="card-text"><span className="by-name">Ciclos:</span>{props.ciclo.map(ObtenerCiclos)}</p>     
                 </div>
                 <div className="card-footer m-0 p-1">

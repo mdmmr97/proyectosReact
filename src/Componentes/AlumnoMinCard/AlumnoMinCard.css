@@ -2,9 +2,9 @@
   padding: 15px;
   height: 600px;
 
-  background-color: #212121 !important;
-  box-shadow: 5px 5px 8px #1b1b1b,
-             -5px -5px 8px #272727;
+  background-color: #364F59 !important;
+  box-shadow: 5px 5px 8px #364F59,
+             -5px -5px 8px #B8D3DF;
   transition: 0.4s;
 }
 
@@ -15,7 +15,7 @@
 .card-title {
   font-size: 18px;
   font-weight: 600;
-  color: #b2eccf !important;
+  color: #ce7d2d !important;
   margin: 15px 0 0 15px;
   min-height: 35px;
 }
@@ -42,16 +42,17 @@
 
 .card-body {
   margin: 5px 0 0 10px;
-  color: rgb(184, 184, 184) !important;
+  color: #f1f1e6 !important;
   font-size: 15px;
 }
 
 .by-name {
   font-weight: 700;
+  color: #ce7d2d !important;
 }
 
 .card-footer{
-  color: rgb(184, 184, 184) !important;
+  color: #f1f1e6 !important;
   font-size: 14px;
 }
 

@@ -7,8 +7,22 @@ import BotonesFiltros from "../BotonesFiltros/BotonesFiltros";
 const ListaPerfilesCompetencias = () => {
     const {busqueda, datosCompetencias} = usePerfilesCompetencias();
 
+    function guardarPerfil(perfil_id) {
+        console.log(perfil_id + " guardado");
+    }
+
+    function borrarPerfil(perfil_id) {
+        console.log(perfil_id + " borrado");
+    }
+
     function mostrarPerfiles(competencia) {
-        return <BotonesFiltros key={competencia.idPerfil} id={competencia.idPerfil} nombre={competencia.nombrePerfil}></BotonesFiltros>
+        return <BotonesFiltros key={competencia.idPerfil}
+                               idBoton={`PC_${competencia.idPerfil}`} 
+                               id={competencia.idPerfil} 
+                               nombre={competencia.nombrePerfil}
+                               guardar={guardarPerfil}
+                               borrar={borrarPerfil}
+                />
     }
 
     console.log(datosCompetencias);
@@ -17,7 +31,6 @@ const ListaPerfilesCompetencias = () => {
         <div>
             {busqueda ? <AjaxLoader></AjaxLoader> : 
             <div className="perfil">
-                <h3>Perfiles Competencia</h3>
                 <div className="row">
                     {datosCompetencias.map(mostrarPerfiles)}
                 </div>

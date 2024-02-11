@@ -1,16 +1,18 @@
 .checkbox-wrapper-11 {
-    --text: #414856;
-    --check: #4F29F0;
-    --disabled: #C3C8DE;
+    --text: #364f59;
+    --check: #ce7d2d;
+    --disabled: #ce7d2d;
     --border-radius: 10px;
     border-radius: var(--border-radius);
-    border: 1px solid #E0E0E0;
+    border: 1px solid #b8d3df;
+    background: #f1f1e6;
     position: relative;
-    padding: 5px;
-    margin: 3px;
+    padding: 3px;
+    margin: 7px;
     display: grid;
     grid-template-columns: 30px auto;
     align-items: center;
+    font-size: 13px;
   }
   
   .checkbox-wrapper-11 label {
@@ -264,7 +266,7 @@
   @-webkit-keyframes firework-11 {
     0% {
       opacity: 1;
-      box-shadow: 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0;
+      box-shadow: 0 0 0 -2px #CE7D2D, 0 0 0 -2px #CE7D2D, 0 0 0 -2px #CE7D2D, 0 0 0 -2px #CE7D2D, 0 0 0 -2px #CE7D2D, 0 0 0 -2px #CE7D2D;
     }
   
     30% {
@@ -273,14 +275,14 @@
   
     100% {
       opacity: 0;
-      box-shadow: 0 -15px 0 0px #4F29F0, 14px -8px 0 0px #4F29F0, 14px 8px 0 0px #4F29F0, 0 15px 0 0px #4F29F0, -14px 8px 0 0px #4F29F0, -14px -8px 0 0px #4F29F0;
+      box-shadow: 0 -15px 0 0px #CE7D2D, 14px -8px 0 0px #CE7D2D, 14px 8px 0 0px #CE7D2D, 0 15px 0 0px #CE7D2D, -14px 8px 0 0px #CE7D2D, -14px -8px 0 0px #CE7D2D;
     }
   }
   
   @keyframes firework-11 {
     0% {
       opacity: 1;
-      box-shadow: 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0, 0 0 0 -2px #4F29F0;
+      box-shadow: 0 0 0 -2px #CE7D2D, 0 0 0 -2px #CE7D2D, 0 0 0 -2px #CE7D2D, 0 0 0 -2px #CE7D2D, 0 0 0 -2px #CE7D2D, 0 0 0 -2px #CE7D2D;
     }
   
     30% {
@@ -289,6 +291,6 @@
   
     100% {
       opacity: 0;
-      box-shadow: 0 -15px 0 0px #4F29F0, 14px -8px 0 0px #4F29F0, 14px 8px 0 0px #4F29F0, 0 15px 0 0px #4F29F0, -14px 8px 0 0px #4F29F0, -14px -8px 0 0px #4F29F0;
+      box-shadow: 0 -15px 0 0px #CE7D2D, 14px -8px 0 0px #CE7D2D, 14px 8px 0 0px #CE7D2D, 0 15px 0 0px #CE7D2D, -14px 8px 0 0px #CE7D2D, -14px -8px 0 0px #CE7D2D;
     }
   }
