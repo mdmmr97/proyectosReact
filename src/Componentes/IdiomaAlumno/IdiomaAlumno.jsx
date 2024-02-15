@@ -1,11 +1,6 @@
-import Banderas from '../../Mocks/mock-banderas';
+import { getBanderaImport } from '../../Servicios/posts/getBanderaImport';
 
 const IdiomaAlumno = (props) => {
-    const banderas = Banderas;
-
-    function buscarBandera(id) {
-        return banderas[id] ? banderas[id].url : banderas['SB'].url;   
-    }
 
     function ComprobarCertificacion(certificado) {
         return certificado === 1 ? 
@@ -17,7 +12,7 @@ const IdiomaAlumno = (props) => {
     return (
       <div className='row d-flex aling-item-center'>
         <div className='col-3'>
-            <img className='img-idiomas' src={buscarBandera(props.id)} data-toggle="tooltip" data-placement="top" title={props.nombre} />
+            <img className='img-idiomas' src={getBanderaImport(props.id)} data-toggle="tooltip" data-placement="top" title={props.nombre} />
         </div>
         <p className='col-6'>{props.nivel}</p>
         <p className='col-3'>{ComprobarCertificacion(props.certificado)}</p>

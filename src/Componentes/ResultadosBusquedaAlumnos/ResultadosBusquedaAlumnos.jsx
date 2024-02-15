@@ -14,7 +14,8 @@ const ResultadosBusquedaAlumnos = () => {
     }
     
     function mostrarAlumnos(alumno) {
-        return  !alumno ? 
+        console.log(alumno);
+        return  alumno === undefined ?
                 <p>No hay alumnos que mostrar</p>
                 :
                 <AlumnoMinCard key={alumno.id}

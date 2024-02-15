@@ -14,7 +14,8 @@ const ResultadosBusquedaProyectos = () => {
     }
 
     function mostrarProyectos(proyecto) {
-        return !proyecto ? 
+        console.log( 'hola \n' + proyecto);
+        return  proyecto.length === 0 ? 
                 <p>No hay proyectos que mostrar</p>
                 :
                 <ProyectoMinCard key={proyecto.id} 
