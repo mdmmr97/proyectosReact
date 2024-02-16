@@ -1,6 +1,7 @@
 import LogoMarcaPersonal from '../../assets/Imagenes/mp-logoNaranja100.png'
 import { IdiomaProvider, useIdiomaContext } from '../../Contexto/contextoIdiomas';
-import { getBanderaImport } from '../../Servicios/posts/getBanderaImport';
+import BanderaEspana from '../../assets/Imagenes/banderaSP.svg'
+import BanderaUK from '../../assets/Imagenes/banderaUK.svg'
 
 import {Link} from "wouter";
 
@@ -27,12 +28,12 @@ const Cabecera = () => {
                     <ul className="navbar-nav">
                         <li className="nav-item mx-1 ">
                             <div className='d-flex justify-content-end justify-content-lg-center' onClick={() => darIdioma('es')}>
-                                <img src={getBanderaImport('ES')} alt="Idioma Español" width={40} height={30}/>
+                                <img src={BanderaEspana} alt="Idioma Español" width={40} height={30}/>
                             </div>
                         </li>
                         <li className="nav-item mx-1">
                             <div className='d-flex justify-content-end justify-content-lg-center' onClick={() => darIdioma('en')}>
-                                <img src={getBanderaImport('EN')} alt="Idioma Ingles" width={40} height={30}/>
+                                <img src={BanderaUK} alt="Idioma Ingles" width={40} height={30}/>
                             </div>
                         </li>
                     </ul>

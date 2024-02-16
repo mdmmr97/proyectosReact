@@ -102,8 +102,7 @@
   
   .checkbox-wrapper-11 input[type=checkbox]:checked + label::before {
     background: var(--disabled);
-    -webkit-animation: slice-11 0.4s ease forwards;
-    animation: slice-11 0.4s ease forwards;
+    visibility: hidden;
   }
   
   .checkbox-wrapper-11 input[type=checkbox]:checked + label::after {
