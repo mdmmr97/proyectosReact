@@ -1,33 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Route, Switch } from 'wouter'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+import Cabecera from './Componentes/Cabecera/Cabecera'
+import Detalle from './Paginas/Detalle'
+import Home from './Paginas/Home'
 
+import React, { Suspense } from 'react';
+//Retrasa la carga de un componente hasta que se haga scroll para verlo
+//Se instala con npm install react-lazy-load
+import LazyLoad from 'react-lazy-load';
+//Hasta que no se haga scroll para ver el elemento no se cargará
+const PiePagina = React.lazy( () => import('./Componentes/PiePagina/PiePagina'));
+
+function App() {
+  //Evitamos que el pie de página se cargue hasta que no se haga scroll para verlo, el pie de página se cargará
+  //cuando falten 100px para verlo
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <header>
+        <Cabecera></Cabecera>
+      </header>
+      <div className='alturaLista'>
+        <Switch>
+          <Route path='/' component={Home}/>
+          <Route path='/comida/:idMeal' component={Detalle}/>
+        </Switch>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Suspense fallback={"Cargando"}>
+        <LazyLoad offset={100}>
+            <PiePagina></PiePagina>
+        </LazyLoad>
+      </Suspense>
     </>
   )
 }
