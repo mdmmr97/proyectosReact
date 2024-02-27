@@ -10,7 +10,7 @@ const MostrarComida = (props) => {
     }
     //Mostramos la lista de comidas que obtenemos del endpoint, si no hay resultados mostramos un mensaje
     return (
-        <div className="row p-3 justify-content-between">
+        <div className="row py-3">
             {props.lista !== null ? 
                 props.lista.map(Mostrar) 
             : 

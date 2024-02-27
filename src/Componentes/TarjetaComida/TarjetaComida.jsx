@@ -1,17 +1,26 @@
 import './TarjetaComida.css'
-import { Link } from "wouter";
+//Lo importamos para poder redirigir a la página de detalle de la comida
+import { useLocation } from "wouter";
 import Favoritos from '../Favoritos/Favoritos';
 
 const TarjetaComida = (props) => {
+    //Obtenemos la función setLocation para poder redirigir a la página de detalle de la comida
+    const  [location, setLocation] = useLocation();
+
+    //Función que redirige a la página de detalle de la comida
+    function RutaDetalle(){
+        setLocation(`/comida/${props.id}`);
+    }
+
     return (
-        <div className='col-3 tarjetaComida'>
-            <Link to={`/comida/${props.id}`}>
-                <div>
+        <div className='col-4 d-flex justify-content-center'>
+            <div className='tarjetaComida'>
+                <div onClick={RutaDetalle}>
                     <img src={props.imagen} alt={props.nombre} />
                     <h2>{props.nombre}</h2>
                 </div>
-            </Link>
-            <Favoritos id={props.id} />   
+                <Favoritos id={props.id} />   
+            </div>
         </div>
     )
 }
