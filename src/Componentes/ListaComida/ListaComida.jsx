@@ -1,9 +1,11 @@
 import useBuscarComida from '../../Hook/useBuscarComida'
-import MostrarComida from '../MostrarComida/MostarComida';
+import useBuscarNombre from '../../Hook/useBuscarNombre'
+import MostrarComida from '../MostrarComida/MostarComida'
 import AjaxLoader from '../Ajax-loader/Ajax-Loader'
 
 const ListaComida = () =>{
     const {buscando, resultadosComida} = useBuscarComida()
+    //const {buscando, resultadosComida} = useBuscarNombre()
     //Pasamos la lista de comidas que obtenemos del endpoint. Como lo obtenido es un array de objetos, 
     //dentro de otro array (meals), pasamos el array de objetos directamente
 
