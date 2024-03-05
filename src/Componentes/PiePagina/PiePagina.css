@@ -1,0 +1,14 @@
+.footer{
+  bottom: 0;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer img{
+  border-radius: 15%;
+  width: 200px;
+  height: 240px;
+  box-shadow: 5px 5px 5px 5px gold;
+}
